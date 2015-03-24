@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+  <!--继承父类-->
   <parent>
 	  <groupId>org.hrl.eLearning</groupId>
 	  <artifactId>eLearning-parent</artifactId>
@@ -18,16 +18,68 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
-  <dependencies>
+  
+<!-- 配置依赖 -->
+ <dependencies>
+ 	<!-- 配置junit -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
     </dependency>
-  </dependencies>
-
+    <!-- hibernate核心包 -->
+    <dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+    </dependency>
+  	<!-- 实现依赖注入的包 -->
+	<dependency>
+		<groupId>javax.inject</groupId>
+		<artifactId>javax.inject</artifactId>
+	</dependency>
+	<!-- oracle的数据库驱动 jar包-->
+	<dependency>
+		<groupId>org.casper.oracle</groupId>
+		<artifactId>ojdbc</artifactId>
+	</dependency>
+	<!-- 数据库连接池-->
+	<dependency>
+		<groupId>commons-dbcp</groupId>
+		<artifactId>commons-dbcp</artifactId>
+	</dependency>
+	<!--=============================================================================== -->
+	<!-- Spring核心包-->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+	</dependency>
+	<!-- spring上下文 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+	</dependency>
+	<!-- spring的Beans -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+	</dependency>
+	<!-- spring的aop -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+	</dependency>
+	<!-- 利用aop做事物需要的切面jar包 -->
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjweaver</artifactId>
+	</dependency>
+	<!-- spring与hibernate整合需要的包-->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+	</dependency>
+  </dependencies> 
+  
+<!-- 继承Prarent中继承的插件 -->
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -39,4 +91,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	
 </project>
